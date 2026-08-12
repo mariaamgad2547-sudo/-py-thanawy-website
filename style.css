@@ -222,3 +222,194 @@ a{
 .nextbtn:hover {
     transform: translateY(-2px);
 }
+.sec-1, .sec-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    margin: 20px auto;
+}
+
+.sec1-text p , .sec2-text p {
+    color: #475569;
+    font-size: 16px;
+}
+
+.sec1Img , .sec2Img {
+    height: 450px;
+    width: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.sec1Img:hover {
+ transform: translate(-3px);
+}
+
+/*Responsive Design*/
+@media (max-width: 1024px) {
+
+    .boxs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mainImg {
+        height: 350px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .navbar li {
+        font-size: 13px;
+    }
+
+    .logoImg {
+        height: 40px;
+    }
+
+    #darkmodebtn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .main {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .mainImg {
+        height: 220px;
+    }
+
+    .intro h1 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    .title {
+        padding: 25px 15px;
+        margin: 15px auto;
+    }
+
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .title p {
+        font-size: 14px;
+    }
+
+    .reading {
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .reading h3 {
+        font-size: 15px;
+        margin: 18px 8px 10px 8px;
+    }
+
+    .verse {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .boxs {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .box h1 {
+        font-size: 17px;
+    }
+
+    .box p, ul {
+        font-size: 15px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .nextbtn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar ul {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logoImg {
+        height: 32px;
+    }
+
+    .title h1 {
+        font-size: 17px;
+    }
+
+    .intro h1 {
+        font-size: 18px;
+    }
+
+    .mainImg {
+        height: 160px;
+    }
+
+    .verse {
+        font-size: 14px;
+    }
+
+    .box h1 {
+        font-size: 15px;
+    }
+
+    .box p, ul {
+        font-size: 14px;
+    }
+
+    .nextbtn {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .title h1 {
+        font-size: 15px;
+    }
+
+    .intro h1 {
+        font-size: 16px;
+    }
+
+    .verse {
+        font-size: 13px;
+    }
+
+    .box h1 {
+        font-size: 14px;
+    }
+}
