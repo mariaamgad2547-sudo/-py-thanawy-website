@@ -165,7 +165,7 @@ footer p {
 
 .boxs {
     display: grid;
-    grid-template-columns: repeat(3, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 18px;
     margin: 0 auto 40px auto;
     padding: 0 20px;
