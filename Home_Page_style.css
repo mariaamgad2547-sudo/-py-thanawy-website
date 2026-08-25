@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: #f4f6f8;
+    --surface: #ffffff;
+    --heading: #2c3e50;
+    --border: #edf2f7;
+    --body-text: #555555;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--page-bg);
+    direction: rtl;
+    color: var(--heading);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+    --page-bg: #0f172a;
+    --surface: #1e293b;
+    --heading: #f8fafc;
+    --border: #334155;
+    --body-text: #cbd5e1;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    column-gap: 40px;
+    margin: 0;
+    padding: 10px 20px;
+    background-color: #1b7a43;
+}
+
+.navbar li {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImg {
+    height: 45px;
+    width: auto;
+}
+
+#darkmodebtn {
+    background-color: #1b7a43;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+#darkmodebtn:hover,
+#darkmodebtn:active {
+    color: #0f172a;
+}
+
+/* 1. الحاوية الرئيسية (Hero Section) */
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--surface);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    gap: 40px;
+}
+
+.intro {
+    flex: 1;
+}
+
+.intro h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1b7a43;
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.intro p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #b8282b;
+    line-height: 1.8;
+}
+
+.bodyimg {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 2. قسم مميزات النشاط */
+.features-section {
+    max-width: 1100px;
+    margin: 40px auto 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    color: var(--heading);
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--surface);
+    flex: 1;
+    min-width: 260px;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border);
+    border-top: 5px solid #1b7a43;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #1b7a43;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 15px;
+    color: var(--body-text);
+    line-height: 1.7;
+}
+
+/* 3. قسم فريق العمل (جنب بعض وفي النص) */
+.team-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background-color: var(--surface);
+    width: 260px;
+    padding: 25px 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    background-color: #e8f5e9;
+    color: #1b7a43;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+
+.team-card h3 {
+    font-size: 18px;
+    color: var(--heading);
+    margin-bottom: 6px;
+}
+
+.team-card .role {
+    display: block;
+    font-size: 14px;
+    color: #b8282b;
+    font-weight: 600;
+}
+
+/* 4. التجاوب مع الموبايل */
+@media (max-width: 768px) {
+    .body {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 25px;
+        margin: 20px;
+    }
+
+    .bodyimg {
+        max-width: 250px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
+.site-footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 60px;
+    border-top: 4px solid #1b7a43;
+}
+
+.footer-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ecf0f1;
+}
+
+.footer-content span {
+    color: #1b7a43;
+    font-weight: 700;
+}
