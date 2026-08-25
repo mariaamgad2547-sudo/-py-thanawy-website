@@ -190,13 +190,17 @@ footer p {
     margin-bottom: 10px;
 }
 
-.box p {
+.box p, ul{
     font-size: 18px;
     color: #475569;
 }
+.subtitle{
+    color: rgb(63, 60, 60);
+    font-size: 20px;
+    font-weight: bold;
+}
 a{
     text-decoration: none;
-
 }
 .nextbtn {
     display: block;
