@@ -202,9 +202,14 @@ footer p {
 a{
     text-decoration: none;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
 .nextbtn {
     display: block;
-    margin: 0 auto 40px auto;
+    margin: 0 20px 40px;
     background-color: #028D33;
     color: white;
     border: none;
