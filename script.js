@@ -70,9 +70,7 @@ if (
 
         dot.addEventListener("click", function () {
             currentSlide = index;
-
             updateSlider();
-
             restartAutoSlide();
         });
 
