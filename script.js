@@ -3,52 +3,55 @@ const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 if (darkmodeButton) {
-    darkmodeButton.addEventListener("click", function () {
-        const isDark = document.body.classList.toggle("dark");
+darkmodeButton.addEventListener("click", function () {
 
-        darkmodeButton.textContent = isDark
-            ? "الوضع النهاري"
-            : "الوضع الليلي";
+```
+    const isDark = document.body.classList.toggle("dark");
 
-        darkmodeButton.setAttribute(
-            "aria-pressed",
-            String(isDark)
-        );
-    });
+    darkmodeButton.textContent = isDark
+        ? "الوضع النهاري"
+        : "الوضع الليلي";
+
+    darkmodeButton.setAttribute(
+        "aria-pressed",
+        String(isDark)
+    );
+});
+```
+
 }
 
 if (menuToggle && navLinks) {
 
-    menuToggle.addEventListener("click", function () {
+```
+menuToggle.addEventListener("click", function () {
 
-        navLinks.classList.toggle("active");
+    const isOpen = navLinks.classList.toggle("active");
 
-        const isOpen = navLinks.classList.contains("active");
+    menuToggle.textContent = isOpen ? "✕" : "☰";
 
-        menuToggle.textContent = isOpen ? "✕" : "☰";
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.textContent = "☰";
 
         menuToggle.setAttribute(
             "aria-expanded",
-            String(isOpen)
+            "false"
         );
     });
+});
+```
 
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            navLinks.classList.remove("active");
-
-            menuToggle.textContent = "☰";
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
 }
 
 const sliderTrack = document.getElementById("sliderTrack");
@@ -61,124 +64,117 @@ let currentSlide = 0;
 let autoSlide = null;
 
 if (
-    sliderTrack &&
-    slides.length > 0 &&
-    prevBtn &&
-    nextBtn &&
-    sliderDots
+sliderTrack &&
+slides.length > 0 &&
+prevBtn &&
+nextBtn &&
+sliderDots
 ) {
 
-    slides.forEach(function (_, index) {
+```
+slides.forEach(function (_, index) {
 
-        const dot = document.createElement("span");
+    const dot = document.createElement("span");
 
-        dot.classList.add("dot");
+    dot.classList.add("dot");
 
-        if (index === 0) {
-            dot.classList.add("active");
-        }
+    if (index === 0) {
+        dot.classList.add("active");
+    }
 
-        dot.addEventListener("click", function () {
+    dot.addEventListener("click", function () {
 
-            currentSlide = index;
+        currentSlide = index;
 
-            updateSlider();
+        updateSlider();
 
-            restartAutoSlide();
-
-        });
-
-        sliderDots.appendChild(dot);
-
+        restartAutoSlide();
     });
 
-    const dots = document.querySelectorAll(".dot");
+    sliderDots.appendChild(dot);
+});
 
-    function updateSlider() {
+const dots = document.querySelectorAll(".dot");
 
-        sliderTrack.style.transform =
-            `translateX(-${currentSlide * 100}%)`;
+function updateSlider() {
 
-        dots.forEach(function (dot, index) {
+    sliderTrack.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
 
-            dot.classList.toggle(
-                "active",
-                index === currentSlide
-            );
+    dots.forEach(function (dot, index) {
 
-        });
+        dot.classList.toggle(
+            "active",
+            index === currentSlide
+        );
+    });
+}
 
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
     }
 
-    function nextSlide() {
+    updateSlider();
+}
 
-        currentSlide++;
+function previousSlide() {
 
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
+    currentSlide--;
 
-        updateSlider();
-
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
     }
 
-    function previousSlide() {
+    updateSlider();
+}
 
-        currentSlide--;
+nextBtn.addEventListener("click", function () {
 
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        }
+    nextSlide();
 
-        updateSlider();
+    restartAutoSlide();
+});
 
-    }
+prevBtn.addEventListener("click", function () {
 
-    nextBtn.addEventListener("click", function () {
+    previousSlide();
+
+    restartAutoSlide();
+});
+
+function startAutoSlide() {
+
+    clearInterval(autoSlide);
+
+    autoSlide = setInterval(function () {
 
         nextSlide();
 
-        restartAutoSlide();
+    }, 4000);
+}
 
-    });
+function restartAutoSlide() {
 
-    prevBtn.addEventListener("click", function () {
-
-        previousSlide();
-
-        restartAutoSlide();
-
-    });
-
-    function startAutoSlide() {
-
-        autoSlide = setInterval(function () {
-
-            nextSlide();
-
-        }, 4000);
-
-    }
-
-    function restartAutoSlide() {
-
-        clearInterval(autoSlide);
-
-        startAutoSlide();
-
-    }
+    clearInterval(autoSlide);
 
     startAutoSlide();
+}
 
-    sliderTrack.addEventListener("mouseenter", function () {
+startAutoSlide();
 
-        clearInterval(autoSlide);
+sliderTrack.addEventListener("mouseenter", function () {
 
-    });
+    clearInterval(autoSlide);
+});
 
-    sliderTrack.addEventListener("mouseleave", function () {
+sliderTrack.addEventListener("mouseleave", function () {
 
-        startAutoSlide();
+    startAutoSlide();
+});
+```
 
-    });
 }
