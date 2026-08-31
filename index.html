@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,42 +11,68 @@
 <body>
 
     <nav class="navbar">
-        <ul>
-            <li class="logo">
-                <a href="index.html">
-                    <img src="pythonaly_meetings_logo_fixed.svg.jpeg" alt="py-thanawy logo" class="logoImg">
-                </a>
-            </li>
+        <div class="nav-container">
 
-            <li>
-                <a href="mocdma  2THI.html" target="_blank">دراسة كتاب</a>
-            </li>
+            <a href="index.html" class="logo">
+                <img src="pythonaly_meetings_logo_fixed.svg.jpeg" alt="pythanawy logo">
+            </a>
 
-            <li>
-                <a href="#">اعرفوا اكتر عننا</a>
-            </li>
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
 
-            <li>
-                <a href="#">عن كنيستنا</a>
-            </li>
+            <ul class="nav-links" id="navLinks">
 
-            <li>
-                <button id="darkmodebtn">الوضع الليلي</button>
-            </li>
-        </ul>
+                <li>
+                    <a href="index.html">الرئيسية</a>
+                </li>
+
+                <li>
+                    <a href="mocdma  2THI.html" target="_blank">
+                        دراسة كتاب
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        اعرفوا اكتر عننا
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        عن كنيستنا
+                    </a>
+                </li>
+
+                <li>
+                    <button id="darkmodebtn">
+                        الوضع الليلي
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
     </nav>
+
 
     <main>
 
         <section class="body">
+
             <div class="intro">
-                <h1>اهلا بيكم في مشروعنا احنا فريق pythanawy26</h1>
+
+                <h1>
+                    اهلا بيكم في مشروعنا احنا فريق pythanawy26
+                </h1>
 
                 <p>
                     احنا شباب و بنات ثانوي كنيسة مارمرقس شبرا
                     احنا اتعلمنا ازاي نعمل ويب سايت و عرفنا عن
                     ذكاء الاصطناعي و عملنا كمان شات بوت
                 </p>
+
             </div>
 
             <img
@@ -53,10 +80,15 @@
                 class="bodyimg"
                 alt="pythanawy logo"
             >
+
         </section>
 
+
         <section class="features-section">
-            <h2 class="section-title">مجالات وعمل الفريق</h2>
+
+            <h2 class="section-title">
+                مجالات وعمل الفريق
+            </h2>
 
             <div class="cards-container">
 
@@ -88,10 +120,83 @@
                 </div>
 
             </div>
+
         </section>
 
+
+        <section class="gallery-section">
+
+            <h2 class="section-title">
+                صور من فريقنا
+            </h2>
+
+            <div class="slider">
+
+                <button class="slider-btn prev" id="prevBtn">
+                    &#10094;
+                </button>
+
+                <div class="slider-window">
+
+                    <div class="slider-track" id="sliderTrack">
+
+                        <div class="slide">
+                            <img src="two.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="one.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="three.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="four.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="five.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="six.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="seven.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="eight.jpeg" alt="فريق pythanawy">
+                        </div>
+
+                        <div class="slide">
+                            <img src="ten.jpeg" alt="فريق pythanawy">
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <button class="slider-btn next" id="nextBtn">
+                    &#10095;
+                </button>
+
+            </div>
+
+            <div class="slider-dots" id="sliderDots"></div>
+
+        </section>
+
+
         <section class="team-section">
-            <h2 class="section-title">فريق العمل</h2>
+
+            <h2 class="section-title">
+                فريق العمل
+            </h2>
 
             <div class="team-container">
 
@@ -124,12 +229,16 @@
                 </div>
 
             </div>
+
         </section>
 
     </main>
 
+
     <footer class="site-footer">
+
         <div class="footer-content">
+
             <p>
                 جميع الحقوق محفوظة &copy; 2026
                 <span>pythanawy26</span>
@@ -138,8 +247,11 @@
             <p>
                 كنيسة مارمرقس شبرا - خدمة الثانوي
             </p>
+
         </div>
+
     </footer>
+
 
     <script src="script.js"></script>
 
