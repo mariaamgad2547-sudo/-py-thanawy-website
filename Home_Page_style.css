@@ -10,6 +10,8 @@
     --heading: #2c3e50;
     --border: #edf2f7;
     --body-text: #555555;
+    --green: #1b7a43;
+    --red: #b8282b;
 }
 
 body {
@@ -18,6 +20,8 @@ body {
     direction: rtl;
     color: var(--heading);
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 body.dark {
@@ -28,6 +32,10 @@ body.dark {
     --body-text: #cbd5e1;
 }
 
+.navbar {
+    width: 100%;
+}
+
 .navbar ul {
     display: flex;
     justify-content: space-between;
@@ -36,7 +44,7 @@ body.dark {
     column-gap: 40px;
     margin: 0;
     padding: 10px 20px;
-    background-color: #1b7a43;
+    background-color: var(--green);
 }
 
 .navbar li {
@@ -48,10 +56,11 @@ body.dark {
 .navbar a {
     text-decoration: none;
     color: white;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: red;
+    color: #ffdddd;
 }
 
 .logo {
@@ -62,23 +71,24 @@ body.dark {
 .logoImg {
     height: 45px;
     width: auto;
+    display: block;
 }
 
 #darkmodebtn {
-    background-color: #1b7a43;
+    background-color: var(--green);
     border: none;
     color: white;
     font-size: 14px;
-    padding: 6px 10px;
+    padding: 7px 12px;
     cursor: pointer;
+    border-radius: 7px;
+    transition: 0.3s ease;
 }
 
-#darkmodebtn:hover,
-#darkmodebtn:active {
-    color: #0f172a;
+#darkmodebtn:hover {
+    background-color: #155f34;
 }
 
-/* 1. الحاوية الرئيسية (Hero Section) */
 .body {
     display: flex;
     align-items: center;
@@ -99,7 +109,7 @@ body.dark {
 .intro h1 {
     font-size: 30px;
     font-weight: 700;
-    color: #1b7a43;
+    color: var(--green);
     margin-bottom: 18px;
     line-height: 1.4;
 }
@@ -107,7 +117,7 @@ body.dark {
 .intro p {
     font-size: 18px;
     font-weight: 500;
-    color: #b8282b;
+    color: var(--red);
     line-height: 1.8;
 }
 
@@ -118,10 +128,9 @@ body.dark {
     object-fit: contain;
 }
 
-/* 2. قسم مميزات النشاط */
 .features-section {
     max-width: 1100px;
-    margin: 40px auto 60px auto;
+    margin: 40px auto 60px;
     padding: 0 20px;
 }
 
@@ -148,7 +157,7 @@ body.dark {
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--border);
-    border-top: 5px solid #1b7a43;
+    border-top: 5px solid var(--green);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -159,7 +168,7 @@ body.dark {
 
 .card h3 {
     font-size: 20px;
-    color: #1b7a43;
+    color: var(--green);
     margin-bottom: 14px;
     font-weight: 700;
 }
@@ -170,7 +179,6 @@ body.dark {
     line-height: 1.7;
 }
 
-/* 3. قسم فريق العمل (جنب بعض وفي النص) */
 .team-section {
     width: 100%;
     max-width: 1100px;
@@ -181,74 +189,47 @@ body.dark {
 
 .team-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
     flex-wrap: wrap;
 }
 
 .team-card {
     background-color: var(--surface);
-    width: 260px;
-    padding: 25px 15px;
+    width: 220px;
+    min-height: 90px;
+    padding: 25px 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
     border: 1px solid var(--border);
-    text-align: center;
-}
-
-.avatar {
-    width: 65px;
-    height: 65px;
-    background-color: #e8f5e9;
-    color: #1b7a43;
-    font-size: 24px;
-    font-weight: 700;
-    border-radius: 50%;
+    border-top: 4px solid var(--green);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 15px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    border-top-color: var(--red);
 }
 
 .team-card h3 {
-    font-size: 18px;
+    font-size: 21px;
     color: var(--heading);
-    margin-bottom: 6px;
+    margin: 0;
+    font-weight: 700;
 }
 
-.team-card .role {
-    display: block;
-    font-size: 14px;
-    color: #b8282b;
-    font-weight: 600;
-}
-
-/* 4. التجاوب مع الموبايل */
-@media (max-width: 768px) {
-    .body {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 25px;
-        margin: 20px;
-    }
-
-    .bodyimg {
-        max-width: 250px;
-    }
-
-    .cards-container {
-        flex-direction: column;
-    }
-}
 .site-footer {
     background-color: #2c3e50;
     color: #ffffff;
     text-align: center;
     padding: 25px 20px;
     margin-top: 60px;
-    border-top: 4px solid #1b7a43;
+    border-top: 4px solid var(--green);
 }
 
 .footer-content p {
@@ -258,6 +239,225 @@ body.dark {
 }
 
 .footer-content span {
-    color: #1b7a43;
+    color: #4caf72;
     font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 15px 10px;
+    }
+
+    .navbar li {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .logoImg {
+        height: 50px;
+        max-width: 180px;
+        object-fit: contain;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    #darkmodebtn {
+        font-size: 14px;
+        padding: 9px 18px;
+        border-radius: 8px;
+    }
+
+    .body {
+        width: calc(100% - 30px);
+        margin: 20px auto;
+        padding: 25px 18px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 25px;
+        border-radius: 18px;
+    }
+
+    .intro {
+        width: 100%;
+    }
+
+    .intro h1 {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+    .intro p {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .bodyimg {
+        width: 70%;
+        max-width: 240px;
+    }
+
+    .features-section {
+        width: 100%;
+        margin: 35px auto 45px;
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 0;
+        padding: 25px 20px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .card h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .team-section {
+        width: 100%;
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .team-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .team-card {
+        width: 100%;
+        min-height: 75px;
+        padding: 20px 10px;
+        border-radius: 14px;
+    }
+
+    .team-card h3 {
+        font-size: 18px;
+    }
+
+    .site-footer {
+        width: 100%;
+        margin-top: 40px;
+        padding: 22px 15px;
+    }
+
+    .footer-content p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar ul {
+        gap: 12px;
+        padding: 12px 8px;
+    }
+
+    .logoImg {
+        height: 45px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .body {
+        width: calc(100% - 20px);
+        padding: 22px 15px;
+        margin: 15px auto;
+    }
+
+    .bodyimg {
+        width: 65%;
+        max-width: 210px;
+    }
+
+    .intro h1 {
+        font-size: 21px;
+    }
+
+    .intro p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .features-section,
+    .team-section {
+        padding: 0 12px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 22px 17px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .team-card {
+        min-height: 70px;
+        padding: 18px 8px;
+    }
+
+    .team-card h3 {
+        font-size: 17px;
+    }
+
+    .site-footer {
+        padding: 20px 12px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
 }
