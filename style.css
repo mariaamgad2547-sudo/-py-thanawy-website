@@ -14,6 +14,12 @@
     --red: #b8282b;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--page-bg);
@@ -34,6 +40,8 @@ body.dark {
 
 .navbar {
     width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: var(--green);
     position: relative;
     z-index: 1000;
@@ -49,32 +57,13 @@ body.dark {
     justify-content: space-between;
 }
 
-.navbar > ul {
-    width: 100%;
-    min-height: 65px;
-    padding: 0 20px;
-    margin: 0;
+.logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    list-style: none;
+    text-decoration: none;
 }
 
-.logo,
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo a,
-.navbar .logo a {
-    display: flex;
-    align-items: center;
-}
-
-.logo img,
-.logoImg,
-.navbar .logoImg {
+.logo img {
     height: 48px;
     width: auto;
     display: block;
@@ -96,8 +85,7 @@ body.dark {
     text-align: center;
 }
 
-.nav-links a,
-.navbar > ul > li > a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-size: 15px;
@@ -106,8 +94,7 @@ body.dark {
     padding: 20px 15px;
 }
 
-.nav-links a:hover,
-.navbar > ul > li > a:hover {
+.nav-links a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -140,13 +127,33 @@ body.dark {
 .body {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1100px;
     margin: 40px auto;
     padding: 40px;
     background: var(--surface);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    gap: 40px;
+}
+
+.intro {
+    flex: 1;
+}
+
+.intro h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.intro p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--red);
+    line-height: 1.9;
 }
 
 .bodyimg {
@@ -335,6 +342,7 @@ body.dark {
 }
 
 .site-footer {
+    width: 100%;
     background-color: #2c3e50;
     color: white;
     text-align: center;
@@ -434,6 +442,14 @@ body.dark {
     box-shadow: 0 10px 20px rgba(184, 40, 43, 0.2);
 }
 
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border);
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
 body.dark .title {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -459,14 +475,7 @@ body.dark .team-card:hover {
         position: relative;
     }
 
-    .navbar > ul {
-        min-height: 65px;
-        padding: 10px 18px;
-        flex-wrap: wrap;
-    }
-
-    .logo img,
-    .navbar .logoImg {
+    .logo img {
         height: 45px;
     }
 
@@ -510,15 +519,6 @@ body.dark .team-card:hover {
         font-size: 15px;
     }
 
-    .navbar > ul > li {
-        flex: 1;
-    }
-
-    .navbar > ul > li > a {
-        padding: 13px 8px;
-        font-size: 14px;
-    }
-
     #darkmodebtn {
         margin-top: 5px;
         padding: 10px 20px;
@@ -528,11 +528,22 @@ body.dark .team-card:hover {
         width: calc(100% - 30px);
         margin: 20px auto;
         padding: 30px 18px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 25px;
     }
 
     .bodyimg {
         width: 70%;
         max-width: 240px;
+    }
+
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .intro p {
+        font-size: 16px;
     }
 
     .features-section {
@@ -544,7 +555,6 @@ body.dark .team-card:hover {
     .section-title {
         font-size: 24px;
         margin: 30px auto;
-        padding: 0 15px;
     }
 
     .cards-container {
@@ -623,12 +633,10 @@ body.dark .team-card:hover {
         width: calc(100% - 30px);
         margin: 25px auto 20px;
         padding: 25px 18px;
-        border-radius: 16px;
     }
 
     .title h1 {
         font-size: 24px;
-        line-height: 1.6;
     }
 
     .boxs {
@@ -650,7 +658,6 @@ body.dark .team-card:hover {
 
     .box p {
         font-size: 15px;
-        line-height: 1.9;
     }
 
     .nextbtn {
@@ -666,27 +673,12 @@ body.dark .team-card:hover {
         padding: 9px 14px;
     }
 
-    .navbar > ul {
-        padding: 9px 10px;
-    }
-
-    .logo img,
-    .navbar .logoImg {
-        height: 40px;
+    .logo img {
+        height: 42px;
     }
 
     .menu-toggle {
         font-size: 26px;
-    }
-
-    .navbar > ul > li > a {
-        font-size: 12px;
-        padding: 12px 5px;
-    }
-
-    #darkmodebtn {
-        font-size: 12px;
-        padding: 7px 5px;
     }
 
     .body {
@@ -700,9 +692,16 @@ body.dark .team-card:hover {
         max-width: 210px;
     }
 
-    .section-title {
+    .intro h1 {
         font-size: 21px;
-        margin: 25px auto;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 22px;
     }
 
     .card {
@@ -776,7 +775,6 @@ body.dark .team-card:hover {
 
     .box p {
         font-size: 14px;
-        line-height: 1.9;
     }
 
     .nextbtn {
